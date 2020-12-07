@@ -32,8 +32,14 @@
   "homepage": "https://github.com/4GeeksAcademy/vanillajs-hello#readme",
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "child_process": "^1.0.2",
+    "dgram": "^1.0.1",
+    "fs": "0.0.1-security",
     "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "module": "^1.2.5",
+    "net": "^1.0.2",
+    "popper.js": "^1.16.1",
+    "tls": "0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",

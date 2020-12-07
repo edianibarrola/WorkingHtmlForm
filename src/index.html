@@ -20,8 +20,9 @@
             <div class="card-header text-left">
               <h4>Payment form example</h4>
             </div>
+
             <div class="card-body">
-              <form>
+              <form id="myForm">
                 <div class="alert alert-danger text-left" role="alert">
                   Some Fields are Missing
                 </div>
@@ -46,6 +47,7 @@
                       placeholder="0000"
                     />
                   </div>
+
                   <div class="form-group col-md-3">
                     <label for="inputAmount">Amount</label>
                     <input
@@ -65,6 +67,7 @@
                       placeholder="First"
                     />
                   </div>
+
                   <div class="form-group col-md-6">
                     <label for="inputLastName">Last Name</label>
                     <input
@@ -81,6 +84,7 @@
                     <label for="inputCity">City</label>
                     <input type="text" class="form-control" id="inputCity" />
                   </div>
+
                   <div class="form-group col-md-3">
                     <label for="inputState">State</label>
                     <select id="inputState" class="form-control">
@@ -143,6 +147,7 @@
                     <input type="number" class="form-control" id="inputZip" />
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-6">
                     <h5>We accept:</h5>
@@ -174,18 +179,20 @@
                     <br /><br />
                   </div>
                 </div>
-              </form>
-            </div>
 
-            <div class="card-footer text-muted">
-              <button type="none" class="btn btn-dark fright">Cancel</button>
-              <button
-                type="none"
-                class="btn btn-primary fright"
-                id="sendButton"
-              >
-                Send
-              </button>
+                <div class="card-footer text-muted">
+                  <button type="none" class="btn btn-dark fright">
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary fright"
+                    id="sendButton"
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

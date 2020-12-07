@@ -5,9 +5,24 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-// let myFunction = () => {};
-// document.querySelector("#inputCC").addEventListener("click", myFunction);
+const validate = e => {
+  e.preventDefault();
 
-//document.getElementById("sendButton").addEventListener("click", myFunction);
+  let inputCc = document.querySelector("#inputCc");
+  let inputCvc = document.querySelector("#inputCvc");
+  let inputAmount = document.querySelector("#inputAmount");
+  let inputFirstName = document.querySelector("#inputFirstName");
+  let inputLastName = document.querySelector("#inputLastName");
+  let inputCity = document.querySelector("#inputCity");
+  let inputState = document.querySelector("#inputState");
 
-console.log(document.forms);
+  if (inputCc.value < 1000000000000000) {
+    addError("CC number invalid. Must be 16 digits");
+    inputCc.classList.add("is-invalid");
+  }
+};
+
+let addError = msg => {
+  var errorMsg = document.querySelector(".alert");
+};
+document.getElementById("myForm").addEventListener("submit", validate);
