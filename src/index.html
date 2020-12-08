@@ -31,19 +31,20 @@
                   <div class="form-group col-md-6">
                     <label for="inputCC">Credit Card:</label>
                     <input
+                      name="inputCc"
                       type="number"
                       class="form-control"
-                      id="inputCC"
+                      id="inputCc"
                       placeholder="XXXXXXXXXXXX"
                     />
                   </div>
 
                   <div class="form-group col-md-2">
-                    <label for="inputCVC">CVC#</label>
+                    <label for="inputCvc">CVC#</label>
                     <input
                       type="number"
                       class="form-control"
-                      id="inputCVC"
+                      id="inputCvc"
                       placeholder="0000"
                     />
                   </div>
@@ -185,9 +186,11 @@
                     Cancel
                   </button>
                   <button
-                    type="submit"
+                    type="button"
                     class="btn btn-primary fright"
                     id="sendButton"
+                    value="submit"
+                    onclick="validateForm();"
                   >
                     Send
                   </button>

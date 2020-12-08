@@ -4,10 +4,18 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+var addError = string => {
+  let alertBox = document.querySelector(".alert");
+  alertBox.classList.contains("d-none") && alertBox.classList.toggle("d-none");
+  alertBox.innerHTML += `<li> ${string}  </li>`;
+};
 
-const validate = e => {
-  e.preventDefault();
+window.validateForm = function validateForm(e) {
+  //e.preventDefault();
+  let resetInputs = document.querySelectorAll("input");
+  resetInputs.forEach(element => element.classList.remove("is-invalid"));
 
+  //input vars
   let inputCc = document.querySelector("#inputCc");
   let inputCvc = document.querySelector("#inputCvc");
   let inputAmount = document.querySelector("#inputAmount");
@@ -15,14 +23,39 @@ const validate = e => {
   let inputLastName = document.querySelector("#inputLastName");
   let inputCity = document.querySelector("#inputCity");
   let inputState = document.querySelector("#inputState");
+  let alertBox = document.querySelector(".alert");
+  // testing vars
+  !alertBox.classList.contains("d-none") && alertBox.classList.toggle("d-none");
 
   if (inputCc.value < 1000000000000000) {
-    addError("CC number invalid. Must be 16 digits");
+    addError("CC number invalid. Must be 16 digits.");
     inputCc.classList.add("is-invalid");
+  }
+
+  if (inputCvc.value < 100) {
+    addError("CVC number is invalid. Must be 3-4 digits.");
+    inputCvc.classList.add("is-invalid");
+  }
+  if (inputAmount.value == 0) {
+    addError("Please enter the amount");
+    inputAmount.classList.add("is-invalid");
+  }
+  if (inputFirstName.value.length < 2) {
+    addError("Please enter your full first name.");
+    inputFirstName.classList.add("is-invalid");
+  }
+  if (inputLastName.value.length < 2) {
+    addError("Please enter your full last name.");
+    inputLastName.classList.add("is-invalid");
+  }
+  if (inputCity.value.length < 2) {
+    addError("Please enter your city.");
+    inputCity.classList.add("is-invalid");
+  }
+  if (inputState.value == "") {
+    addError("Please select a state.");
+    inputState.classList.add("is-invalid");
   }
 };
 
-let addError = msg => {
-  var errorMsg = document.querySelector(".alert");
-};
-document.getElementById("myForm").addEventListener("submit", validate);
+//document.getElementById("myForm").addEventListener("submit", validateForm);
