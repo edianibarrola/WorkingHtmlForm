@@ -11,7 +11,6 @@ var addError = string => {
 };
 
 window.validateForm = function validateForm(e) {
-  //e.preventDefault();
   let resetInputs = document.querySelectorAll("input");
   resetInputs.forEach(element => element.classList.remove("is-invalid"));
 
@@ -24,13 +23,14 @@ window.validateForm = function validateForm(e) {
   let inputCity = document.querySelector("#inputCity");
   let inputState = document.querySelector("#inputState");
   let alertBox = document.querySelector(".alert");
+  let inputZip = document.querySelector("#inputZip");
   // testing vars
   !alertBox.classList.contains("d-none") && alertBox.classList.toggle("d-none");
 
   if (inputCc.value < 1000000000000000) {
     addError("CC number invalid. Must be 16 digits.");
     inputCc.classList.add("is-invalid");
-  }
+  } else inputCc.classList.remove("is-invalid");
 
   if (inputCvc.value < 100) {
     addError("CVC number is invalid. Must be 3-4 digits.");
@@ -52,9 +52,13 @@ window.validateForm = function validateForm(e) {
     addError("Please enter your city.");
     inputCity.classList.add("is-invalid");
   }
-  if (inputState.value == "") {
+  if (inputState.value.length != 2) {
     addError("Please select a state.");
     inputState.classList.add("is-invalid");
+  }
+  if (inputZip.value < 10000) {
+    addError("Please enter your zip code.");
+    inputZip.classList.add("is-invalid");
   }
 };
 
