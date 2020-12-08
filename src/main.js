@@ -26,11 +26,11 @@ window.validateForm = function validateForm(e) {
   let inputZip = document.querySelector("#inputZip");
   // testing vars
   !alertBox.classList.contains("d-none") && alertBox.classList.toggle("d-none");
-
+  alertBox.innerHTML = "";
   if (inputCc.value < 1000000000000000) {
     addError("CC number invalid. Must be 16 digits.");
     inputCc.classList.add("is-invalid");
-  } else inputCc.classList.remove("is-invalid");
+  }
 
   if (inputCvc.value < 100) {
     addError("CVC number is invalid. Must be 3-4 digits.");
