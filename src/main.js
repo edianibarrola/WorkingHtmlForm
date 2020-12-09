@@ -12,7 +12,10 @@ var addError = string => {
 
 window.validateForm = function validateForm(e) {
   let resetInputs = document.querySelectorAll("input");
+  let resetSelect = document.querySelectorAll("select");
+
   resetInputs.forEach(element => element.classList.remove("is-invalid"));
+  resetSelect.forEach(element => element.classList.remove("is-invalid"));
 
   //input vars
   let inputCc = document.querySelector("#inputCc");
@@ -52,7 +55,7 @@ window.validateForm = function validateForm(e) {
     addError("Please enter your city.");
     inputCity.classList.add("is-invalid");
   }
-  if (inputState.value.length != 2) {
+  if (inputState.value == "Choose...") {
     addError("Please select a state.");
     inputState.classList.add("is-invalid");
   }
